@@ -38,6 +38,7 @@ namespace Tactical_Plan
             boxlist = new List<BoxThing>();
             ll = FindViewById<LinearLayout>(Resource.Id.linearLayout1);
             SetupLocation();
+            GetStartTactics();
         }
         #region location
         private void SetupLocation()
@@ -98,14 +99,17 @@ namespace Tactical_Plan
         #endregion
         private void GetStartTactics()
         {
-
+            /*
                 if (currentLocation == null)
                 {
                     return;
                 }
-
+                
                 double lat = currentLocation.Latitude;
                 double lon = currentLocation.Longitude;
+                */
+            double lat = 32;
+            double lon = -98;
 
                 Tactical_Provider.TacticalCom connection = new Tactical_Provider.TacticalCom(Tactical_Provider.TacticalCom.State.Client);
                 try

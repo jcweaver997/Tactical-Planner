@@ -12,13 +12,32 @@ using Android.Widget;
 
 namespace Tactical_Plan
 {
-    [Activity(Label = "SelectActivity")]
+    [Activity(Label = "SelectActivity", WindowSoftInputMode = SoftInput.StateHidden)]
     public class SelectActivity : Activity
     {
+
+        private ImageView mainImage;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.SelectLayout);
 
+            BoxThing bt = BoxThing.Findboxthing(BoxThing.currentIndex);
+            TextView name = FindViewById<TextView>(Resource.Id.textView1);
+            TextView address = FindViewById<TextView>(Resource.Id.textView2);
+            EditText comments = FindViewById<EditText>(Resource.Id.editText1);
+            comments.SetBackgroundColor(new Android.Graphics.Color(63, 63, 63));
+            mainImage = FindViewById<ImageView>(Resource.Id.imageView1);
+            ImageView firstImage = FindViewById<ImageView>(Resource.Id.imageView2);
+            mainImage.SetImageBitmap(bt.pic);
+            firstImage.SetImageBitmap(bt.pic);
+
+
+            name.Text = bt.m_name+" - ";
+            address.Text = bt.m_street;
+
+            ActionBar.SetDisplayHomeAsUpEnabled(true);
+            
             // Create your application here
         }
     }

@@ -10,10 +10,11 @@ namespace Tactical_Plan
 {
     public class BoxThing
     {
+        public string m_name, m_street;
+        public Bitmap pic;
         private TextView street, zip, name;
         private ImageView iv, divider;
         private byte[] pica;
-        private Bitmap pic;
         private int id;
         private LinearLayout outerv, outerh, innerv, innerh;
         private static List<BoxThing> boxlist;
@@ -23,7 +24,8 @@ namespace Tactical_Plan
         public BoxThing(Activity activity, ViewGroup parent, List<BoxThing> boxlist, string name, string street, int zip, int id, byte[] pica)
         {
             if (BoxThing.boxlist == null){BoxThing.boxlist = boxlist;}
-
+            m_name = name;
+            m_street = street;
             this.id = id;
             this.pica = pica;
             this.activity = activity;
@@ -89,6 +91,7 @@ namespace Tactical_Plan
         private void onClick( object sender, EventArgs e)
         {
             currentIndex = id;
+            activity.StartActivity(typeof(SelectActivity));
         }
 
 
