@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Android.App;
 using Android.Content;
 using Android.Runtime;
@@ -132,7 +132,10 @@ namespace Tactical_Plan
                     byte addressLength = connection.Recv(1)[0];
 
                     string address = Encoding.ASCII.GetString(connection.Recv(addressLength));
-                    int zip = BitConverter.ToInt32(connection.Recv(4), 0);
+                byte nameLength = connection.Recv(1)[0];
+
+                string name = Encoding.ASCII.GetString(connection.Recv(nameLength));
+                int zip = BitConverter.ToInt32(connection.Recv(4), 0);
                     int id = BitConverter.ToInt32(connection.Recv(4), 0);
                     int piclength = BitConverter.ToInt32(connection.Recv(4), 0);
                     byte[] pic = connection.Recv(piclength);
@@ -142,7 +145,7 @@ namespace Tactical_Plan
                     b.Show();
                 }
                 else {
-                    new BoxThing(this, ll, boxlist, "test", address, zip, id, pic).Show();
+                    new BoxThing(this, ll, boxlist, name, address, zip, id, pic).Show();
                 }
 
 

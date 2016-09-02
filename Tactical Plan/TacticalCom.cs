@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Sockets;
@@ -19,7 +19,7 @@ namespace Tactical_Provider
         private const int defaultPort = 5505;
         public int port { get; set; }
 
-        private const string defaultIP = "104.131.50.67";
+        private const string defaultIP = "104.236.94.98";
         public string IP { get; set; }
 
         public const byte GETFIVE = 2;

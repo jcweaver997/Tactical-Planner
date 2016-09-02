@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Tactical_Plan
 {
-    [Activity(Label = "SelectActivity", WindowSoftInputMode = SoftInput.StateHidden)]
+    [Activity(Label = "SelectActivity", WindowSoftInputMode = SoftInput.AdjustPan)]
     public class SelectActivity : Activity
     {
 
@@ -27,6 +27,8 @@ namespace Tactical_Plan
             TextView address = FindViewById<TextView>(Resource.Id.textView2);
             EditText comments = FindViewById<EditText>(Resource.Id.editText1);
             comments.SetBackgroundColor(new Android.Graphics.Color(63, 63, 63));
+            comments.Text = "test text";
+            comments.Enabled = false;
             mainImage = FindViewById<ImageView>(Resource.Id.imageView1);
             ImageView firstImage = FindViewById<ImageView>(Resource.Id.imageView2);
             mainImage.SetImageBitmap(bt.pic);
@@ -37,8 +39,14 @@ namespace Tactical_Plan
             address.Text = bt.m_street;
 
             ActionBar.SetDisplayHomeAsUpEnabled(true);
-            
+
+            GetSpecific();
             // Create your application here
+        }
+
+        private void GetSpecific()
+        {
+
         }
     }
 }
