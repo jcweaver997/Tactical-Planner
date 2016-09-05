@@ -26,6 +26,8 @@ namespace Tactical_Provider
         public const byte GETSPECIFIC = 3;
         public const byte CLOSE = 4;
         public const byte DATA = 1;
+        public const byte YES = 5;
+        public const byte NO = 6;
 
         private TcpListener listener;
         public TcpClient client;
@@ -116,6 +118,12 @@ namespace Tactical_Provider
             client.GetStream().Write(b, 0, b.Length);
             client.GetStream().Flush();
 
+
+        }
+        public void SendTo(byte[] b, int offset, int length, TcpClient client)
+        {
+            client.GetStream().Write(b, offset, length);
+            client.GetStream().Flush();
 
         }
         public void SendTo(byte b, TcpClient client)

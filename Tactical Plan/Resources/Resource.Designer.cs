@@ -60,14 +60,11 @@ namespace Tactical_Plan
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050007
-			public const int editText1 = 2131034119;
+			// aapt resource value: 0x7f050006
+			public const int editText1 = 2131034118;
 			
 			// aapt resource value: 0x7f050004
 			public const int imageView1 = 2131034116;
-			
-			// aapt resource value: 0x7f050006
-			public const int imageView2 = 2131034118;
 			
 			// aapt resource value: 0x7f050001
 			public const int linearLayout1 = 2131034113;

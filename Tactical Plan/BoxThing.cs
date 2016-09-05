@@ -31,7 +31,7 @@ namespace Tactical_Plan
             this.activity = activity;
             this.parent = parent;
 
-            if (pic == null){new Task(Decode).Start();}
+            
 
             outerh = new LinearLayout(this.activity.ApplicationContext);
             outerh.Orientation = Orientation.Horizontal;
@@ -50,6 +50,8 @@ namespace Tactical_Plan
             iv.LayoutParameters = new ViewGroup.LayoutParams(padding*20,padding*20);
             iv.SetScaleType(ImageView.ScaleType.FitCenter);
             outerh.AddView(iv);
+
+            if (pic == null) { new Task(Decode).Start(); }
 
             this.name = new TextView(this.activity.ApplicationContext);
             this.name.Text = name;
