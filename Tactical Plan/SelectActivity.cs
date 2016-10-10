@@ -116,7 +116,11 @@ namespace Tactical_Plan
             address.Text = bt.m_street;
 
             ActionBar.SetDisplayHomeAsUpEnabled(true);
+            new ImCo(this, BoxThing.Findboxthing(BoxThing.currentIndex).pica, "Woo", -1);
+
             ImCo.Showall(this);
+
+
             new Thread(GetSpecific).Start();
             //GetSpecific();
             // Create your application here
@@ -168,11 +172,6 @@ namespace Tactical_Plan
                     }
                     connection.Send(Tactical_Provider.TacticalCom.DATA);
                 }
-
-                //mem.Flush();
-                //mem.Read(pic,0,picLen);
-                Bitmap b = BitmapFactory.DecodeByteArray(pic,0,picLen);
-                RunOnUiThread(() => mainImage.SetImageBitmap(b));
                 Console.WriteLine("pic = " + pic.Length + " / " + picLen + " / " + mem.Length);
                 mem.Close();
 

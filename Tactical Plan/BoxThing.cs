@@ -14,7 +14,7 @@ namespace Tactical_Plan
         public Bitmap pic;
         private TextView street, zip, name;
         private ImageView iv, divider;
-        private byte[] pica;
+        public byte[] pica { get; set; }
         private int id;
         private LinearLayout outerv, outerh, innerv, innerh;
         private static List<BoxThing> boxlist;
